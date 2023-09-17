@@ -1,0 +1,19 @@
+schema: '2.0'
+stages:
+  data_load:
+    cmd: python src/stages/data_load.py --config=params.yaml
+    deps:
+    - path: src/stages/data_load.py
+      md5: ebc71be562bef12448a953eae1f8d147
+      size: 956
+    params:
+      params.yaml:
+        base:
+          random_state: 42
+          log_level: INFO
+        data_load:
+          dataset_csv: data/raw/iris.csv
+    outs:
+    - path: data/raw/iris.csv
+      md5: 4224576f0267bf88902f87f0f6200967
+      size: 2757
